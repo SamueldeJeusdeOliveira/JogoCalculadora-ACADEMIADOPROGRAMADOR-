@@ -32,13 +32,23 @@ namespace ConsoleApp1
                     double n1 = double.Parse(Console.ReadLine());
                     if(opcao == 4 && n1 == 0)
                     {
-                        Console.WriteLine("Não é permitido divisão com zero! Por favor digite novamente!");
-                        n1 = double.Parse(Console.ReadLine());
+                        while (n1 == 0)
+                        {
+                            Console.WriteLine("Não é permitido divisão com zero! Por favor digite novamente!");
+                            n1 = double.Parse(Console.ReadLine());
+                        }
                     }
 
                     Console.WriteLine("Digite o segundo número:");
                     double n2 = double.Parse(Console.ReadLine());
-
+                    if (opcao == 4 && n2 == 0)
+                    {
+                        while (n2 == 0)
+                        {
+                            Console.WriteLine("Não é permitido divisão com zero! Por favor digite novamente!");
+                            n2 = double.Parse(Console.ReadLine());
+                        }
+                    }
                     double resultado = 0;
 
                     switch (opcao)
@@ -53,7 +63,7 @@ namespace ConsoleApp1
                             resultado = n1 * n2;
                             break;
                         default:
-                            
+                            resultado = n1 / n2;
                             break;
                     }
                     Console.Clear();
